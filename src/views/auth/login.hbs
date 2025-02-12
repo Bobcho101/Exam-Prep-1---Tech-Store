@@ -1,0 +1,45 @@
+
+    <section class="login-hero">
+        <div class="container">
+            <h2>Login to Your Account</h2>
+            <p>Access your order history, track orders, and more.</p>
+        </div>
+    </section>
+
+    <section class="login-form">
+         {{#if error}}
+            <div>
+                <div class="errorContainer">
+                    <p>{{error}}</p>
+                </div>
+            </div>
+        {{/if}}
+        <div class="container">
+            <form method="POST">
+                {{#if data}}
+                 <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="{{data.email}}">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>Don't have an account? <a href="/register">Register</a></p>
+                {{else}}
+                 <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>Don't have an account? <a href="/register">Register</a></p>
+                {{/if}}
+               
+            </form>
+        </div>
+    </section>
