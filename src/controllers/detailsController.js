@@ -40,7 +40,7 @@ detailsController.get('/details/:deviceId/edit', isUser, async (req, res) => {
     res.render('edit', { device });
 });
 
-detailsController.post('/details/:deviceId/edit', async (req, res) => {
+detailsController.post('/details/:deviceId/edit', isUser, async (req, res) => {
     const data = req.body;
     const deviceId = req.params.deviceId;
     try{
